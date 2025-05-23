@@ -1,41 +1,41 @@
 # Mock Engine
 
-Mock Engine est un microservice flexible conçu pour générer et servir des API mockées. Il permet de simuler rapidement des endpoints d'API pour le développement, les tests et la démonstration d'applications.
+Mock Engine is a flexible microservice designed to generate and serve mocked APIs. It enables rapid simulation of API endpoints for development, testing, and application demonstrations.
 
-## Fonctionnalités
+## Features
 
-- 🚀 **Création dynamique d'endpoints mock** - Création à la volée d'endpoints avec réponse personnalisée
-- 🔄 **Génération de données réalistes** - Utilisation de Bogus pour générer des données fictives cohérentes
-- 📊 **Support des schémas JSON & OpenAPI** - Création de mocks à partir de schémas existants
-- ⏱️ **Simulation de latence** - Ajout de délais configurables pour tester la résilience des applications
-- 📝 **Documentation Swagger intégrée** - Interface interactive pour explorer et tester les API
-- 🔍 **Middleware intelligent** - Interception automatique des requêtes pour servir les réponses mockées
+- 🚀 **Dynamic Mock Endpoints** - Create on-the-fly endpoints with custom responses
+- 🔄 **Realistic Data Generation** - Use Bogus to generate consistent mock data
+- 📊 **JSON & OpenAPI Schema Support** - Create mocks from existing schemas
+- ⏱️ **Latency Simulation** - Add configurable delays to test application resilience
+- 📝 **Built-in Swagger Documentation** - Interactive interface to explore and test APIs
+- 🔍 **Intelligent Middleware** - Automatically intercepts requests to serve mock responses
 
-## Prérequis
+## Prerequisites
 
-- [.NET 9.0](https://dotnet.microsoft.com/download) ou version ultérieure
+- [.NET 9.0](https://dotnet.microsoft.com/download) or later
 
 ## Installation
 
 ```bash
-# Cloner le dépôt
+# Clone the repository
 git clone https://github.com/hichammh/mock-engine.git
 cd mock-engine
 
-# Restaurer les packages et compiler
+# Restore packages and build
 dotnet restore
 dotnet build
 
-# Lancer l'application
+# Run the application
 cd src/MockEngine
 dotnet run
 ```
 
-Le service sera accessible à l'adresse `http://localhost:5001`.
+The service will be available at `http://localhost:5001`.
 
-## Utilisation
+## Usage
 
-### Création d'un endpoint mock simple
+### Creating a Simple Mock Endpoint
 
 ```bash
 curl -X POST http://localhost:5001/api/mocks \
@@ -53,13 +53,13 @@ curl -X POST http://localhost:5001/api/mocks \
   }'
 ```
 
-### Accès à l'endpoint mock
+### Accessing the Mock Endpoint
 
 ```bash
 curl -X GET http://localhost:5001/products
 ```
 
-### Génération de données à partir d'un exemple
+### Generating Data from an Example
 
 ```bash
 curl -X POST http://localhost:5001/api/mocks/generate-from-example \
@@ -76,35 +76,34 @@ curl -X POST http://localhost:5001/api/mocks/generate-from-example \
   -G -d 'count=5'
 ```
 
-## Intégration avec API Gateway
+## API Gateway Integration
 
-Le service mock-engine est conçu pour s'intégrer parfaitement avec une API Gateway qui route les requêtes vers `/mock-engine/` vers ce service. Il peut être utilisé avec n'importe quelle API Gateway compatible (comme l'API Gateway du projet APImitate qui utilise YARP).
+The mock-engine service is designed to seamlessly integrate with an API Gateway that routes requests to `/mock-engine/` to this service. It can be used with any compatible API Gateway (such as the APImitate project's API Gateway using YARP).
 
-## Structure du Projet
+## Project Structure
 
 ```
 src/
-├── MockEngine/                  # Projet principal
-    ├── Config/                  # Configuration du service
+├── MockEngine/                  # Main project
+    ├── Config/                  # Service configuration
     ├── Controllers/             # API controllers
-    ├── Interfaces/              # Interfaces et contrats
-    ├── Middleware/              # Middleware pour intercepter les requêtes
-    ├── Models/                  # Modèles de données
-    ├── Services/                # Logique métier et services
-    └── Storage/                 # Implémentations de stockage
+    ├── Interfaces/              # Interfaces and contracts
+    ├── Middleware/              # Middleware for intercepting requests
+    ├── Models/                  # Data models
+    ├── Services/                # Business logic and services
+    └── Storage/                 # Storage implementations
 ```
 
-## Technologies utilisées
+## Technologies Used
 
 - ASP.NET Core 9.0
-- Bogus (génération de données fictives)
-- JsonSchema.Net (validation de schémas)
-- Microsoft.OpenAPI (traitement de spécifications OpenAPI)
+- Bogus (fake data generation)
+- JsonSchema.Net (schema validation)
+- Microsoft.OpenAPI (OpenAPI specification processing)
 
-## Contribuer
+## Contributing
 
-Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou soumettre une pull request.
 
-## Licence
+## License
 
 [MIT](LICENSE)
