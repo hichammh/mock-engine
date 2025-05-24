@@ -4,7 +4,7 @@
 # Default owners for everything in the repository
 * @hichammh
 
-# Specific ownership for core components
+# Specific ownership for core components.
 /src/MockEngine/Config/ @hichammh
 /src/MockEngine/Controllers/ @hichammh
 /src/MockEngine/Interfaces/ @hichammh
