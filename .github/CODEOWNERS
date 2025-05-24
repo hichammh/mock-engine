@@ -1,0 +1,28 @@
+# This is a CODEOWNERS file for the Mock Engine project
+# Each line is a file pattern followed by one or more owners
+
+# Default owners for everything in the repository
+* @hichammh
+
+# Specific ownership for core components
+/src/MockEngine/Config/ @hichammh
+/src/MockEngine/Controllers/ @hichammh
+/src/MockEngine/Interfaces/ @hichammh
+/src/MockEngine/Middleware/ @hichammh
+/src/MockEngine/Models/ @hichammh
+/src/MockEngine/Services/ @hichammh
+/src/MockEngine/Storage/ @hichammh
+
+# Project configuration files
+*.csproj @hichammh
+*.sln @hichammh
+appsettings*.json @hichammh
+
+# Documentation files
+README.md @hichammh
+*.md @hichammh
+
+# Test-related files
+/tests/ @hichammh
+*.Tests/ @hichammh
+*.Test/ @hichammh
